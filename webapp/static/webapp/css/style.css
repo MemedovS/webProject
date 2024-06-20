@@ -1,0 +1,45 @@
+.header {
+    background-color: #4CAF50; /* Зеленый цвет фона */
+    color: white; /* Белый цвет текста */
+    padding: 1rem 0;
+}
+/* Стиль для обычных ссылок */
+a {
+    color: #00BFFF; /* Цвет текста ссылки */
+    text-decoration: none; /* Удаление подчеркивания под ссылкой */
+}
+
+/* Стиль для активных ссылок */
+a:hover {
+    color: red; /* Цвет текста ссылки при наведении */
+}
+body {
+    background-color: #E0FFFF; /* Цвет фона */
+}
+
+/* my_dz_3/css/style.css */
+.resized-image {
+    width: 100px; /* Set the desired width */
+    height: 100; /* Maintain the aspect ratio */
+}
+.float-right {
+            float: right;
+            margin: 10px; /* Необязательно: добавьте немного поля для лучшего интервала. */
+            width: 150px; /* Установите желаемую ширину */
+            height: auto; /* Сохраняйте соотношение сторон */
+        }
+.custom-header {
+    color: blue; /* Замените на нужный вам цвет */
+}
+.cus-header {
+    color: #red; /* Замените на нужный вам цвет */
+}
+.cust-header {
+    color: #4B0082; /* Замените на нужный вам цвет */
+}
+.client-info p,li {
+    color: #4B0082; /* Цвет текста */
+}
+.cl-info h2,h1 {
+    color: red /* Цвет текста */
+}

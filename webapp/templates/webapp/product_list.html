@@ -1,0 +1,27 @@
+{% extends 'webapp/base.html' %}
+
+{% load static %}
+
+{% block title %}Product List{% endblock %}
+
+{% block content %}
+<li><a href="{% url 'client_list' %}" class="btn btn-primary">На главную </a></li>
+<li><a href="{% url 'add_product' %}" class="btn btn-primary">Добавить продукт</a></li>
+    <h1>Product List</h1>
+    <ul>
+        {% for product in products %}
+            <li>
+                <strong>{{ product.name }}</strong> -
+                Price: {{ product.price }} -
+                Quantity: {{ product.quantity }}
+                {% if product.photo %}
+                    <br>
+                    <img src="{{ product.photo.url }}" alt="{{ product.name }}" style="max-width: 200px; max-height: 200px;">
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
+
+

@@ -1,0 +1,33 @@
+{% extends 'webapp/base.html' %}
+{% load static %}
+
+{% block title %}Client Detail{% endblock %}
+
+{% block header %}<h1 class="cus-header">Client Detail</h1>
+<li> <a href="{% url 'client_list' %}" class="btn btn-primary">На главную </a></li>
+    {% endblock %}
+
+{% block content %}
+<div class="client-info">
+    <p><strong>ID:</strong> {{ client.id }}</p>
+    <p><strong>Name:</strong> {{ client.name }}</p>
+    <p><strong>Email:</strong> {{ client.email }}</p>
+    <p><strong>Phone Number:</strong> {{ client.phone_number }}</p>
+    <p><strong>Address:</strong> {{ client.address }}</p>
+    <p><strong>Registration Date:</strong> {{ client.registration_date }}</p>
+
+
+    <h2 style="color: blue;">Orders</h2>
+    <ul>
+        {% for order in orders %}
+        <li>
+            Order ID: <a href="{% url 'client_orders' client.id %}">{{ order.id }}</a> - Total: {{ order.total_amount }}
+            - Date: {{ order.order_date }}
+        </li>
+        {% endfor %}
+
+    </ul>
+</div>
+<a href="{% url 'client_orders' client.id %}">View all ordered products</a>
+{% endblock %}
+

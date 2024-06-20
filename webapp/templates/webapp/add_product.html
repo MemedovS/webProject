@@ -1,0 +1,15 @@
+{% extends 'webapp/base.html' %}
+{% load static %}
+
+{% block title %}Добавить продук{% endblock %}
+{% block content %}
+<li> <a href="{% url 'client_list' %}" class="btn btn-primary">На главную </a></li>
+<body>
+    <h1>Добавить новый продукт</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Добавить</button>
+    </form>
+</body>
+{% endblock %}

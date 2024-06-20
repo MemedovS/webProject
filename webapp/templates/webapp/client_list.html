@@ -1,0 +1,21 @@
+{% extends 'webapp/base.html' %}
+{% load static %}
+
+{% block title %}Client List{% endblock %}
+
+{% block header %}<h1 class="cust-header">Client List</h1>
+<li><a href="{% url 'add_product' %}" class="btn btn-primary">Добавить продукт</a></li>
+<li><a href="{% url 'product_list' %}" class="btn btn-primary"> Товары в наличии</a></li>
+{% endblock %}
+
+{% block content %}
+<ul>
+    {% for client in clients %}
+    <li>
+        <a href="{% url 'client_detail' client.id %}">{{ client.name }}</a>
+
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

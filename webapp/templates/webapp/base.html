@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Title{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'webapp/css/style.css' %}">
+
+</head>
+<body>
+<header>
+    <img src="{% static 'webapp/image/583.jpg' %}" alt="Example Image" class="float-right">
+
+    <h1>{% block header %}{% endblock %}</h1>
+</header>
+
+<main>
+    {% block content %}{% endblock %}
+</main>
+
+<footer>
+    <p>&copy; 2024 Shamil</p>
+</footer>
+</body>
+</html>

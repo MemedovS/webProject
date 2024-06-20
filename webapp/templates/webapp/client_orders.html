@@ -1,0 +1,42 @@
+{% extends 'webapp/base.html' %}
+{% load static %}
+{% block title %}Client Orders{% endblock %}
+{% block header %}
+<li> <a href="{% url 'client_list' %}" class="btn btn-primary">На главную </a></li>
+<!--<h1 style="color: blue;"></h1>-->
+<h1 class="custom-header">Orders List</h1>
+{% endblock %}
+{% block content %}
+<div class="cl-info">
+    <h1>Orders---{{ client.name }}</h1>
+
+    <h2>Products ordered in the last 7 days</h2>
+    <ul>
+        {% for product in products_week %}
+        <li>{{ product.name }} - {{ product.description }} - ${{ product.price }}</li>
+        {% empty %}
+        <li>No products ordered in the last 7 days.</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Products ordered in the last 30 days</h2>
+    <ul>
+        {% for product in products_month %}
+        <li>{{ product.name }} - {{ product.description }} - ${{ product.price }}</li>
+        {% empty %}
+        <li>No products ordered in the last 30 days.</li>
+        {% endfor %}
+    </ul>
+
+
+    <h2>Products ordered in the last 365 days</h2>
+    <ul>
+        {% for product in products_year %}
+        <li>{{ product.name }} - {{ product.description }} - ${{ product.price }}</li>
+        {% empty %}
+        <li>No products ordered in the last 365 days.</li>
+        {% endfor %}
+
+    </ul>
+</div>
+{% endblock %}
