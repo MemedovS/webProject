@@ -24,7 +24,7 @@ urlpatterns = [
     #path('', include('my_dz_1.urls')),
     path('', include('webapp.urls')),
     #path('__debug__/', include("debug_toolbar.urls")),
-    #path('dez/', include("my_dz_3.urls")),
+    path('web/', include("webapp.urls")),
 ]
-# if settings.DEBUG:
-#     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
